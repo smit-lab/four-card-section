@@ -1,0 +1,145 @@
+@import "reset";
+@import "globals";
+@import "function";
+
+body {
+  background-color: $lightGray;
+  color: $darkBlue;
+}
+
+.main-txt,
+.feature {
+  max-width: calc(100vw - rem(64));
+}
+
+.main-txt {
+  margin: rem(85) auto rem(76);
+  text-align: center;
+
+  &__heading {
+    font-size: rem(24);
+    font-weight: 600;
+    letter-spacing: 0.166px;
+
+    &--light {
+      font-weight: 200;
+    }
+
+    &--bold {
+      margin-bottom: rem(16);
+    }
+  }
+
+  &__para {
+    font-size: rem(15);
+    line-height: 1.67;
+    font-weight: 400;
+    letter-spacing: 0.011px;
+
+    opacity: 0.5;
+  }
+}
+
+.feature {
+  @include grid;
+  gap: rem(25);
+  margin: 0 auto rem(78);
+
+  &-card {
+    @include grid;
+    flex-direction: column;
+    padding: rem(28);
+    box-shadow: $boxShadow;
+    border-radius: rem(8);
+    border-top: 3.55px solid #fff;
+
+    &--supervisor {
+      border-color: $cyan;
+    }
+    &--team {
+      border-color: $red;
+    }
+    &--karma {
+      border-color: $orange;
+    }
+    &--calculator {
+      border-color: $blue;
+    }
+
+    &__heading {
+      font-size: rem(20);
+      font-weight: 600;
+    }
+
+    &__para {
+      font-size: rem(13);
+      line-height: 1.77;
+      letter-spacing: 0.01px;
+      opacity: 0.5;
+      margin-bottom: rem(33);
+    }
+
+    &-icons {
+      justify-self: end;
+      width: rem(57);
+      height: rem(57);
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .feature {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1025px) {
+  .main-txt,
+  .feature {
+    max-width: rem(1110);
+  }
+  .main-txt {
+    max-width: rem(540);
+    margin: rem(80) auto rem(64);
+
+    &__heading {
+      font-size: rem(36);
+      letter-spacing: 0.25px;
+    }
+  }
+
+  .feature {
+    grid-template-columns: repeat(3, 1fr);
+
+    &-card {
+      padding: rem(32);
+
+      &__heading {
+        margin-bottom: rem(6);
+      }
+
+      &__para {
+        margin-bottom: rem(40);
+      }
+
+      &-icons {
+        width: rem(64);
+        height: rem(64);
+      }
+
+      &--supervisor {
+        grid-row: 1 / span 2;
+        align-self: center;
+      }
+
+      &--team {
+        grid-area: 2 / 2 / 3 / 3;
+      }
+
+      &--calculator {
+        grid-row: span 2;
+        align-self: center;
+      }
+    }
+  }
+}

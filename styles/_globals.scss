@@ -1,0 +1,16 @@
+//colors
+$red: #ea5353;
+$cyan: #45d3d3;
+$orange: #fcaf4a;
+$blue: #549ef2;
+$darkBlue: #4d4f62;
+$grayishBlue: #a3a5ae;
+$lightGray: #fafafa;
+
+$boxShadow: 0px 15px 30px -11px rgba(131, 166, 210, 0.5);
+
+
+//flex
+@mixin grid {
+  display: grid;
+}
